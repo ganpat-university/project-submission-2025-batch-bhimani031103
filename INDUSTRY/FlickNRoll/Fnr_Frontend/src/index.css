@@ -1,0 +1,161 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float3d {
+    0%, 100% {
+      transform: translate(-50%, -50%) rotate(0deg) translateZ(0);
+    }
+    50% {
+      transform: translate(-50%, -45%) rotate(360deg) translateZ(20px);
+    }
+  }
+  
+  @keyframes spin-slow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .animate-3d-ball {
+    animation: float3d 8s ease-in-out infinite;
+  }
+  
+  .animate-spin-slow {
+    animation: spin-slow linear infinite;
+  }
+  
+
+
+   */
+/* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #1f2937;
+}
+
+.dashboard-container {
+  @apply min-h-screen p-8;
+}
+
+.card {
+  @apply bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-lg p-6 transition-all duration-300;
+}
+
+.card:hover {
+  @apply transform scale-105 shadow-xl;
+}
+
+.header {
+  @apply text-4xl font-bold text-gray-800 mb-10;
+}
+
+.stat-card {
+  @apply flex items-center gap-4;
+}
+
+.stat-icon {
+  @apply p-3 rounded-full;
+}
+
+.input-field {
+  @apply flex-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all;
+}
+
+.button {
+  @apply p-3 rounded-lg transition-all;
+}
+
+.button-primary {
+  @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+.table {
+  @apply w-full;
+}
+
+.table th {
+  @apply text-left py-3 px-4 text-gray-600;
+}
+
+.table td {
+  @apply py-3 px-4 text-gray-800;
+}
+
+.table tr {
+  @apply border-b border-gray-200 hover:bg-gray-50 transition-all;
+}
+
+.status-badge {
+  @apply px-2 py-1 rounded-full text-xs;
+}
+
+.modal {
+  @apply fixed inset-0 bg-gray-900 bg-opacity-40 flex items-center justify-center z-50;
+}
+
+.modal-content {
+  @apply bg-white bg-opacity-90 backdrop-blur-md p-6 rounded-2xl shadow-xl w-full max-w-md;
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
